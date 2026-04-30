@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Game Arcade</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ── Home Screen ───────────────────────────── -->
+    <div id="home-screen">
+        <header class="arcade-header">
+            <h1>🎮 GAME ARCADE</h1>
+            <p class="subtitle">Pick a game and start playing!</p>
+        </header>
+        <div class="game-grid" id="game-grid"></div>
+    </div>
+
+    <!-- ── Game Screen (games render here) ───────── -->
+    <div id="game-screen" class="hidden">
+        <button id="btn-home" class="home-btn" aria-label="Back to home">← Home</button>
+        <div id="game-container"></div>
+    </div>
+
+    <!-- Three.js for 3D games -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+    <script src="games/ping-pong.js"></script>
+    <script src="games/tic-tac-toe.js"></script>
+    <script src="games/memory-game.js"></script>
+    <script src="games/reaction-test.js"></script>
+    <script src="games/game-2048.js"></script>
+    <script src="games/minesweeper.js"></script>
+    <script src="games/sudoku.js"></script>
+    <script src="games/whack-a-mole.js"></script>
+    <script src="games/click-speed.js"></script>
+    <script src="games/color-match.js"></script>
+    <script src="games/driving-game.js"></script>
+    <script src="games/archery-game.js"></script>
+    <script src="games/shooting-game.js"></script>
+    <script src="games/train-sim.js"></script>
+    <script src="games/flight-sim.js"></script>
+</body>
+</html>
