@@ -120,8 +120,8 @@ const App = (() => {
                     <div class="card-desc">${g.description}</div>
                     <span class="card-tag ${g.tagClass}">${g.tag}</span>
                 `;
-                card.addEventListener('click', () => launchGame(g));
-                card.addEventListener('keydown', e => { if (e.key === 'Enter') launchGame(g); });
+                card.addEventListener('click', () => launchGame(g, card));
+                card.addEventListener('keydown', e => { if (e.key === 'Enter') launchGame(g, card); });
                 grid.appendChild(card);
             });
 
@@ -129,13 +129,58 @@ const App = (() => {
         });
     }
 
-    /* Launch a game */
-    function launchGame(game) {
+    /* Launch a game with card expand animation */
+    function launchGame(game, cardEl) {
         activeGame = game;
-        homeScreen.classList.add('hidden');
-        gameScreen.classList.remove('hidden');
-        gameContainer.innerHTML = '';
-        game.init(gameContainer);
+
+        if (!cardEl) {
+            // Fallback: no animation
+            homeScreen.classList.add('hidden');
+            gameScreen.classList.remove('hidden');
+            gameContainer.innerHTML = '';
+            game.init(gameContainer);
+            return;
+        }
+
+        // Get card position
+        const rect = cardEl.getBoundingClientRect();
+
+        // Create expanding clone
+        const clone = cardEl.cloneNode(true);
+        clone.className = 'game-card card-expand-clone';
+        clone.style.cssText = `
+            position: fixed;
+            left: ${rect.left}px;
+            top: ${rect.top}px;
+            width: ${rect.width}px;
+            height: ${rect.height}px;
+            margin: 0;
+            z-index: 9000;
+            pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+            border-color: var(--accent);
+            box-shadow: 0 8px 40px var(--card-hover-shadow);
+        `;
+        document.body.appendChild(clone);
+
+        // Force reflow then expand to full screen
+        void clone.offsetWidth;
+        clone.style.left = '0';
+        clone.style.top = '0';
+        clone.style.width = '100vw';
+        clone.style.height = '100vh';
+        clone.style.borderRadius = '0';
+        clone.style.opacity = '0.3';
+
+        // After animation, switch to game screen
+        setTimeout(() => {
+            clone.remove();
+            homeScreen.classList.add('hidden');
+            gameScreen.classList.remove('hidden');
+            gameContainer.innerHTML = '';
+            game.init(gameContainer);
+        }, 500);
     }
 
     /* Go home */
