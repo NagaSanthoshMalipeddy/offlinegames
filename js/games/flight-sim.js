@@ -35,19 +35,19 @@ App.register({
                     </div>
                 </div>
                 <!-- Attitude indicator -->
-                <div id="fs-atti" style="position:absolute;bottom:80px;left:50%;transform:translateX(-50%);z-index:10;pointer-events:none;width:100px;height:100px;border:2px solid #fff4;border-radius:50%;overflow:hidden;background:linear-gradient(to bottom, #446688 50%, #886644 50%)">
+                <div id="fs-atti" style="position:absolute;bottom:clamp(60px,15vh,80px);left:50%;transform:translateX(-50%);z-index:10;pointer-events:none;width:clamp(60px,15vw,100px);height:clamp(60px,15vw,100px);border:2px solid #fff4;border-radius:50%;overflow:hidden;background:linear-gradient(to bottom, #446688 50%, #886644 50%)">
                     <div id="fs-atti-line" style="position:absolute;top:50%;left:0;right:0;height:2px;background:#fff;transform-origin:center"></div>
                 </div>
                 <!-- Mobile controls -->
                 <div style="position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:space-between;padding:0 12px;z-index:10;pointer-events:none">
                     <div style="display:flex;gap:6px;pointer-events:auto">
-                        <button class="dg-ctrl" id="fs-t-left" style="width:50px;height:50px;border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:1.2rem">◀</button>
-                        <button class="dg-ctrl" id="fs-t-right" style="width:50px;height:50px;border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:1.2rem">▶</button>
+                        <button class="dg-ctrl" id="fs-t-left" style="width:clamp(36px,10vw,50px);height:clamp(36px,10vw,50px);border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">◀</button>
+                        <button class="dg-ctrl" id="fs-t-right" style="width:clamp(36px,10vw,50px);height:clamp(36px,10vw,50px);border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">▶</button>
                     </div>
                     <div style="display:flex;gap:6px;pointer-events:auto">
-                        <button class="dg-ctrl" id="fs-t-down" style="width:50px;height:50px;border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:1.2rem">▼</button>
-                        <button class="dg-ctrl" id="fs-t-up" style="width:50px;height:50px;border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:1.2rem">▲</button>
-                        <button class="dg-ctrl" id="fs-t-thr" style="width:50px;height:50px;border-radius:50%;border:2px solid #ff84;background:#ff02;color:#fff;font-size:0.7rem">THR</button>
+                        <button class="dg-ctrl" id="fs-t-down" style="width:clamp(36px,10vw,50px);height:clamp(36px,10vw,50px);border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">▼</button>
+                        <button class="dg-ctrl" id="fs-t-up" style="width:clamp(36px,10vw,50px);height:clamp(36px,10vw,50px);border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">▲</button>
+                        <button class="dg-ctrl" id="fs-t-thr" style="width:clamp(36px,10vw,50px);height:clamp(36px,10vw,50px);border-radius:50%;border:2px solid #ff84;background:#ff02;color:#fff;font-size:clamp(0.55rem,1.5vw,0.7rem)">THR</button>
                     </div>
                 </div>
                 <canvas id="fs-canvas" style="display:block;width:100%;height:100%"></canvas>

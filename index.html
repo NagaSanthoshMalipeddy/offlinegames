@@ -4,11 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Game Arcade</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Theme toggle -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <div id="theme-overlay" class="theme-transition-overlay"></div>
+
     <!-- ── Home Screen ───────────────────────────── -->
     <div id="home-screen">
+        <!-- Background decorations -->
+        <div class="bg-decorations" aria-hidden="true">
+            <!-- Running pixel character -->
+            <div class="runner">
+                <svg class="runner-sprite" viewBox="0 0 32 32" width="48" height="48">
+                    <!-- Hat -->
+                    <rect x="10" y="2" width="12" height="4" fill="#e53935"/>
+                    <rect x="8" y="4" width="16" height="2" fill="#e53935"/>
+                    <!-- Hair -->
+                    <rect x="8" y="6" width="4" height="2" fill="#6d4c41"/>
+                    <rect x="8" y="8" width="4" height="2" fill="#6d4c41"/>
+                    <!-- Face -->
+                    <rect x="12" y="6" width="8" height="6" fill="#ffcc80"/>
+                    <rect x="20" y="8" width="2" height="4" fill="#ffcc80"/>
+                    <!-- Eyes -->
+                    <rect x="14" y="8" width="2" height="2" fill="#222"/>
+                    <!-- Mustache -->
+                    <rect x="12" y="12" width="10" height="2" fill="#6d4c41"/>
+                    <!-- Body / overalls -->
+                    <rect x="8" y="14" width="16" height="6" fill="#1565c0"/>
+                    <rect x="10" y="14" width="12" height="2" fill="#e53935"/>
+                    <!-- Belt -->
+                    <rect x="12" y="18" width="2" height="2" fill="#fdd835"/>
+                    <rect x="18" y="18" width="2" height="2" fill="#fdd835"/>
+                    <!-- Arms -->
+                    <rect class="runner-arm-l" x="6" y="14" width="2" height="6" fill="#e53935"/>
+                    <rect class="runner-arm-r" x="24" y="14" width="2" height="6" fill="#ffcc80"/>
+                    <!-- Legs -->
+                    <rect class="runner-leg-l" x="10" y="20" width="4" height="6" fill="#1565c0"/>
+                    <rect class="runner-leg-r" x="18" y="20" width="4" height="6" fill="#1565c0"/>
+                    <!-- Shoes -->
+                    <rect class="runner-shoe-l" x="8" y="26" width="6" height="4" rx="1" fill="#6d4c41"/>
+                    <rect class="runner-shoe-r" x="18" y="26" width="6" height="4" rx="1" fill="#6d4c41"/>
+                </svg>
+            </div>
+            <!-- Floating joystick/controller icons -->
+            <span class="float-icon fi-1">🎮</span>
+            <span class="float-icon fi-2">🕹️</span>
+            <span class="float-icon fi-1">🎮</span>
+            <span class="float-icon fi-2">🕹️</span>
+            <span class="float-icon fi-3">🎮</span>
+            <span class="float-icon fi-4">🕹️</span>
+            <span class="float-icon fi-5">🎮</span>
+            <span class="float-icon fi-6">🕹️</span>
+            <span class="float-icon fi-7">🎮</span>
+            <span class="float-icon fi-8">🕹️</span>
+            <span class="float-icon fi-9">🎮</span>
+            <span class="float-icon fi-10">🕹️</span>
+            <span class="float-icon fi-11">🎮</span>
+            <span class="float-icon fi-12">🕹️</span>
+            <span class="float-icon fi-13">🎮</span>
+            <span class="float-icon fi-14">🕹️</span>
+            <span class="float-icon fi-15">🎮</span>
+            <span class="float-icon fi-16">🕹️</span>
+            <span class="float-icon fi-17">🎮</span>
+            <span class="float-icon fi-18">🕹️</span>
+            <span class="float-icon fi-19">🎮</span>
+            <span class="float-icon fi-20">🕹️</span>
+            <span class="float-icon fi-21">🎮</span>
+            <span class="float-icon fi-22">🕹️</span>
+            <span class="float-icon fi-23">🎮</span>
+            <span class="float-icon fi-24">🕹️</span>
+            <span class="float-icon fi-25">🎮</span>
+            <span class="float-icon fi-26">🕹️</span>
+            <span class="float-icon fi-27">🎮</span>
+            <span class="float-icon fi-28">🕹️</span>
+            <span class="float-icon fi-29">🎮</span>
+            <span class="float-icon fi-30">🕹️</span>
+            <!-- Web-swinging Spider-Man -->
+            <div class="spidey" aria-hidden="true">
+                <!-- Web line -->
+                <div class="spidey-web-line"></div>
+                <!-- Spider-Man pixel sprite -->
+                <svg class="spidey-sprite" viewBox="0 0 32 40" width="44" height="55">
+                    <!-- Head -->
+                    <rect x="10" y="0" width="12" height="10" rx="2" fill="#d32f2f"/>
+                    <!-- Eyes -->
+                    <rect x="12" y="3" width="4" height="3" rx="1" fill="#fff"/>
+                    <rect x="18" y="3" width="4" height="3" rx="1" fill="#fff"/>
+                    <rect x="13" y="4" width="2" height="1" fill="#222"/>
+                    <rect x="19" y="4" width="2" height="1" fill="#222"/>
+                    <!-- Web pattern on head -->
+                    <line x1="16" y1="0" x2="16" y2="10" stroke="#b71c1c" stroke-width="0.5"/>
+                    <line x1="10" y1="5" x2="22" y2="5" stroke="#b71c1c" stroke-width="0.5"/>
+                    <!-- Body -->
+                    <rect x="8" y="10" width="16" height="12" rx="1" fill="#d32f2f"/>
+                    <!-- Chest spider logo -->
+                    <rect x="14" y="12" width="4" height="2" fill="#222"/>
+                    <rect x="13" y="13" width="1" height="3" fill="#222" transform="rotate(-20 13 13)"/>
+                    <rect x="18" y="13" width="1" height="3" fill="#222" transform="rotate(20 18 13)"/>
+                    <!-- Blue parts -->
+                    <rect x="10" y="14" width="3" height="8" fill="#1565c0"/>
+                    <rect x="19" y="14" width="3" height="8" fill="#1565c0"/>
+                    <!-- Web-shooting arm (extended up) -->
+                    <rect class="spidey-arm" x="4" y="4" width="4" height="2" rx="1" fill="#d32f2f"/>
+                    <rect x="2" y="3" width="3" height="3" rx="1" fill="#d32f2f"/>
+                    <!-- Other arm flowing back -->
+                    <rect x="24" y="14" width="4" height="2" rx="1" fill="#d32f2f"/>
+                    <!-- Legs (dynamic swing pose) -->
+                    <rect class="spidey-leg-l" x="10" y="22" width="4" height="10" rx="1" fill="#1565c0"/>
+                    <rect class="spidey-leg-r" x="18" y="22" width="4" height="10" rx="1" fill="#d32f2f"/>
+                    <!-- Boots -->
+                    <rect x="9" y="30" width="5" height="3" rx="1" fill="#d32f2f"/>
+                    <rect x="18" y="30" width="5" height="3" rx="1" fill="#d32f2f"/>
+                </svg>
+            </div>
+            <!-- Ground line -->
+            <div class="ground-line"></div>
+        </div>
+
         <header class="arcade-header">
             <h1>🎮 GAME ARCADE</h1>
             <p class="subtitle">Pick a game and start playing!</p>
@@ -26,21 +141,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
-    <script src="games/ping-pong.js"></script>
-    <script src="games/tic-tac-toe.js"></script>
-    <script src="games/memory-game.js"></script>
-    <script src="games/reaction-test.js"></script>
-    <script src="games/game-2048.js"></script>
-    <script src="games/minesweeper.js"></script>
-    <script src="games/sudoku.js"></script>
-    <script src="games/whack-a-mole.js"></script>
-    <script src="games/click-speed.js"></script>
-    <script src="games/color-match.js"></script>
-    <script src="games/driving-game.js"></script>
-    <script src="games/archery-game.js"></script>
-    <script src="games/shooting-game.js"></script>
-    <script src="games/train-sim.js"></script>
-    <script src="games/flight-sim.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/games/ping-pong.js"></script>
+    <script src="js/games/tic-tac-toe.js"></script>
+    <script src="js/games/memory-game.js"></script>
+    <script src="js/games/reaction-test.js"></script>
+    <script src="js/games/game-2048.js"></script>
+    <script src="js/games/minesweeper.js"></script>
+    <script src="js/games/sudoku.js"></script>
+    <script src="js/games/whack-a-mole.js"></script>
+    <script src="js/games/click-speed.js"></script>
+    <script src="js/games/color-match.js"></script>
+    <script src="js/games/driving-game.js"></script>
+    <script src="js/games/archery-game.js"></script>
+    <script src="js/games/shooting-game.js"></script>
+    <script src="js/games/train-sim.js"></script>
+    <script src="js/games/flight-sim.js"></script>
+    <script src="js/games/chess.js"></script>
+    <script src="js/games/solitaire.js"></script>
+    <script src="js/games/snake.js"></script>
+    <script src="js/games/ludo.js"></script>
+    <script src="js/games/snake-ladder.js"></script>
 </body>
 </html>

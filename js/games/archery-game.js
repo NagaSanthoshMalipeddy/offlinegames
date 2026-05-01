@@ -31,7 +31,7 @@ App.register({
                 <div id="ar-cross" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;pointer-events:none;font-size:2rem;color:#fff8;text-shadow:0 0 6px #000">+</div>
                 <canvas id="ar-canvas" style="display:block;width:100%;height:100%"></canvas>
                 <!-- power bar -->
-                <div style="position:absolute;bottom:15px;left:50%;transform:translateX(-50%);z-index:10;pointer-events:none;width:200px;height:12px;background:#0005;border-radius:6px;overflow:hidden">
+                <div style="position:absolute;bottom:15px;left:50%;transform:translateX(-50%);z-index:10;pointer-events:none;width:clamp(120px,40vw,200px);height:12px;background:#0005;border-radius:6px;overflow:hidden">
                     <div id="ar-power" style="height:100%;width:0%;background:linear-gradient(90deg,#4caf50,#ffeb3b,#f44336);border-radius:6px;transition:width 0.05s"></div>
                 </div>
                 <div id="ar-over" class="hidden" style="position:absolute;inset:0;background:#000c;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;z-index:20">

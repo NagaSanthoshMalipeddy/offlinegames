@@ -73,25 +73,29 @@ A fully responsive, zero-dependency browser-based Game Arcade with **15 playable
 ## 📁 Project Structure
 
 ```
-├── index.html          # Single page — home screen + game shell
-├── styles.css          # Global responsive styles
-├── app.js              # Router — game registration, navigation, category grouping
-└── games/
-    ├── ping-pong.js        # Ping Pong (Canvas 2D)
-    ├── tic-tac-toe.js      # Tic Tac Toe (DOM + Minimax AI)
-    ├── memory-game.js      # Memory Cards (DOM)
-    ├── reaction-test.js    # Reaction Time (DOM)
-    ├── game-2048.js        # 2048 (DOM)
-    ├── minesweeper.js      # Minesweeper (DOM)
-    ├── sudoku.js           # Sudoku (DOM + Backtracking)
-    ├── whack-a-mole.js     # Whack-a-Mole (DOM)
-    ├── click-speed.js      # Click Speed (DOM)
-    ├── color-match.js      # Color Match (DOM)
-    ├── driving-game.js     # Mini Driving (Three.js)
-    ├── archery-game.js     # Archery (Three.js)
-    ├── shooting-game.js    # Target Shooting (Three.js)
-    ├── train-sim.js        # Train Simulator (Three.js)
-    └── flight-sim.js       # Flight Simulator (Three.js)
+├── index.html              # Single page — home screen + game shell
+├── 404.html                # Custom 404 error page
+├── css/
+│   └── style.css           # Global responsive styles
+├── js/
+│   ├── script.js           # Router — game registration, navigation, category grouping
+│   └── games/
+│       ├── ping-pong.js        # Ping Pong (Canvas 2D)
+│       ├── tic-tac-toe.js      # Tic Tac Toe (DOM + Minimax AI)
+│       ├── memory-game.js      # Memory Cards (DOM)
+│       ├── reaction-test.js    # Reaction Time (DOM)
+│       ├── game-2048.js        # 2048 (DOM)
+│       ├── minesweeper.js      # Minesweeper (DOM)
+│       ├── sudoku.js           # Sudoku (DOM + Backtracking)
+│       ├── whack-a-mole.js     # Whack-a-Mole (DOM)
+│       ├── click-speed.js      # Click Speed (DOM)
+│       ├── color-match.js      # Color Match (DOM)
+│       ├── driving-game.js     # Mini Driving (Three.js)
+│       ├── archery-game.js     # Archery (Three.js)
+│       ├── shooting-game.js    # Target Shooting (Three.js)
+│       ├── train-sim.js        # Train Simulator (Three.js)
+│       └── flight-sim.js       # Flight Simulator (Three.js)
+└── staticwebapp.config.json    # Azure Static Web Apps config
 ```
 
 ---

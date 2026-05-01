@@ -1,4 +1,56 @@
 /* ── App Controller / Router ──────────────────── */
+/* ── Theme System ───────────────────────────── */
+(() => {
+    const toggle = document.getElementById('theme-toggle');
+    const overlay = document.getElementById('theme-overlay');
+    const saved = localStorage.getItem('theme');
+
+    // Apply saved theme on load (no animation)
+    if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        toggle.textContent = '☀️';
+    }
+
+    toggle.addEventListener('click', (e) => {
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+        const nextTheme = isLight ? 'dark' : 'light';
+        const nextBg = isLight ? '#0a0a1a' : '#f0f2f5';
+
+        // Get button position for circle origin (top-right)
+        const rect = toggle.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+
+        // 1) Set overlay to NEXT theme's background color
+        overlay.style.background = nextBg;
+        overlay.style.setProperty('--cx', cx + 'px');
+        overlay.style.setProperty('--cy', cy + 'px');
+
+        // 2) Start circle expanding from toggle button
+        overlay.classList.remove('expanding');
+        void overlay.offsetWidth;
+        overlay.classList.add('expanding');
+
+        // 3) Switch theme when circle fully covers screen
+        setTimeout(() => {
+            if (nextTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                toggle.textContent = '☀️';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                toggle.textContent = '🌙';
+            }
+            localStorage.setItem('theme', nextTheme);
+        }, 600);
+
+        // 4) Clean up after animation
+        setTimeout(() => {
+            overlay.classList.remove('expanding');
+            overlay.style.clipPath = 'circle(0% at 50% 50%)';
+            overlay.style.background = 'transparent';
+        }, 750);
+    });
+})();
 const App = (() => {
     'use strict';
 
@@ -19,10 +71,10 @@ const App = (() => {
 
     /* Category display order & icons */
     const CATEGORY_META = {
-        'Simulation': { icon: '🎮', label: 'Simulation & Action' },
         'Puzzle':     { icon: '🧩', label: 'Logic & Puzzle' },
         'Reflex':     { icon: '⚡', label: 'Reflex & Casual' },
         'Classic':    { icon: '🕹️', label: 'Classic' },
+        'Simulation': { icon: '🎮', label: 'Simulation & Action' },
     };
 
     /* Render home screen cards grouped by category */

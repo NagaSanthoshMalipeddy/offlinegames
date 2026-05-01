@@ -42,12 +42,12 @@ App.register({
                 <!-- Mobile controls -->
                 <div id="dg-touch" style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:space-between;padding:0 16px;z-index:10;pointer-events:none">
                     <div style="display:flex;gap:8px;pointer-events:auto">
-                        <button class="dg-ctrl" id="dg-t-left" style="width:56px;height:56px;border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:1.5rem">◀</button>
-                        <button class="dg-ctrl" id="dg-t-right" style="width:56px;height:56px;border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:1.5rem">▶</button>
+                        <button class="dg-ctrl" id="dg-t-left" style="width:clamp(40px,12vw,56px);height:clamp(40px,12vw,56px);border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:clamp(1rem,3vw,1.5rem)">◀</button>
+                        <button class="dg-ctrl" id="dg-t-right" style="width:clamp(40px,12vw,56px);height:clamp(40px,12vw,56px);border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:clamp(1rem,3vw,1.5rem)">▶</button>
                     </div>
                     <div style="display:flex;gap:8px;pointer-events:auto">
-                        <button class="dg-ctrl" id="dg-t-brake" style="width:56px;height:56px;border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:1.2rem">🛑</button>
-                        <button class="dg-ctrl" id="dg-t-gas" style="width:56px;height:56px;border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:1.2rem">🚀</button>
+                        <button class="dg-ctrl" id="dg-t-brake" style="width:clamp(40px,12vw,56px);height:clamp(40px,12vw,56px);border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">🛑</button>
+                        <button class="dg-ctrl" id="dg-t-gas" style="width:clamp(40px,12vw,56px);height:clamp(40px,12vw,56px);border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:clamp(0.9rem,2.5vw,1.2rem)">🚀</button>
                     </div>
                 </div>
 

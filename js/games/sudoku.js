@@ -121,14 +121,14 @@ App.register({
                 const btn = document.createElement('button');
                 btn.className = 'g-btn-sm';
                 btn.textContent = n;
-                btn.style.cssText = 'width:36px;height:36px;font-size:1.1rem;font-weight:700;';
+                btn.style.cssText = 'width:clamp(30px,8vw,40px);height:clamp(30px,8vw,40px);font-size:clamp(0.85rem,2.5vw,1.1rem);font-weight:700;';
                 btn.addEventListener('click', () => placeNum(n));
                 numsEl.appendChild(btn);
             }
             const clr = document.createElement('button');
             clr.className = 'g-btn-sm';
             clr.textContent = '✕';
-            clr.style.cssText = 'width:36px;height:36px;font-size:1.1rem;color:#ff4081;';
+            clr.style.cssText = 'width:clamp(30px,8vw,40px);height:clamp(30px,8vw,40px);font-size:clamp(0.85rem,2.5vw,1.1rem);color:#ff4081;';
             clr.addEventListener('click', () => placeNum(0));
             numsEl.appendChild(clr);
         }

@@ -37,12 +37,12 @@ App.register({
                 <!-- Throttle/brake controls (mobile) -->
                 <div style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:space-between;padding:0 16px;z-index:10;pointer-events:none">
                     <div style="display:flex;gap:8px;pointer-events:auto">
-                        <button class="dg-ctrl" id="ts-t-brake" style="width:60px;height:60px;border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:0.8rem">BRAKE</button>
-                        <button class="dg-ctrl" id="ts-t-ebrake" style="width:60px;height:60px;border-radius:50%;border:2px solid #f008;background:#f004;color:#fff;font-size:0.7rem">E-BRAKE</button>
+                        <button class="dg-ctrl" id="ts-t-brake" style="width:clamp(40px,12vw,60px);height:clamp(40px,12vw,60px);border-radius:50%;border:2px solid #f444;background:#f002;color:#fff;font-size:clamp(0.6rem,2vw,0.8rem)">BRAKE</button>
+                        <button class="dg-ctrl" id="ts-t-ebrake" style="width:clamp(40px,12vw,60px);height:clamp(40px,12vw,60px);border-radius:50%;border:2px solid #f008;background:#f004;color:#fff;font-size:clamp(0.5rem,1.5vw,0.7rem)">E-BRAKE</button>
                     </div>
                     <div style="display:flex;gap:8px;pointer-events:auto">
-                        <button class="dg-ctrl" id="ts-t-down" style="width:60px;height:60px;border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:1rem">▼</button>
-                        <button class="dg-ctrl" id="ts-t-up" style="width:60px;height:60px;border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:1rem">▲</button>
+                        <button class="dg-ctrl" id="ts-t-down" style="width:clamp(40px,12vw,60px);height:clamp(40px,12vw,60px);border-radius:50%;border:2px solid #fff4;background:#0004;color:#fff;font-size:clamp(0.8rem,2.5vw,1rem)">▼</button>
+                        <button class="dg-ctrl" id="ts-t-up" style="width:clamp(40px,12vw,60px);height:clamp(40px,12vw,60px);border-radius:50%;border:2px solid #4f44;background:#0f02;color:#fff;font-size:clamp(0.8rem,2.5vw,1rem)">▲</button>
                     </div>
                 </div>
                 <canvas id="ts-canvas" style="display:block;width:100%;height:100%"></canvas>
